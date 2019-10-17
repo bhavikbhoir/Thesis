@@ -7,7 +7,7 @@ close all;
 clear all;
 
 %Input the image
-O=imread('Input Image.jpg');                                               %Read Input image 
+O=imread('Veggies.jpg');                                               %Read Input image 
 X1 = O(:,:,1); X2 = O(:,:,2); X3 = O(:,:,3);                              %Extract the RGB Channels 
 [rw cl p] = size(O);                              
 wavelet=input('Select the wavelet ','s');                                 %Select wavelet for analysis 
