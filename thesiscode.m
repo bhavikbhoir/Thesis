@@ -18,69 +18,133 @@ wavelet=input('Select the wavelet ','s');                                 %Selec
 [c3,l3] = wavedec2(X3,3,wavelet); 
  
 %To reconstruct the level 1,2,3 approximation from C and S 
-A31 = wrcoef2('a',c1,l1,wavelet,3); A21 = wrcoef2('a',c1,l1,wavelet,2); 
-A11 = wrcoef2('a',c1,l1,wavelet,1); H11 = wrcoef2('h',c1,l1,wavelet,1);  
-V11 = wrcoef2('v',c1,l1,wavelet,1); D11 = wrcoef2('d',c1,l1,wavelet,1);  
-H21 = wrcoef2('h',c1,l1,wavelet,2);V21 = wrcoef2('v',c1,l1,wavelet,2);  
-D21 = wrcoef2('d',c1,l1,wavelet,3); H31 = wrcoef2('h',c1,l1,wavelet,3); 
-V31 = wrcoef2('v',c1,l1,wavelet,3); D31 = wrcoef2('d',c1,l1,wavelet,3);           
-A32 = wrcoef2('a',c2,l2,wavelet,3); A22 = wrcoef2('a',c2,l2,wavelet,2); 
-A12 = wrcoef2('a',c2,l2,wavelet,1); H12 = wrcoef2('h',c2,l2,wavelet,1);  
-V12 = wrcoef2('v',c2,l2,wavelet,1); D12 = wrcoef2('d',c2,l2,wavelet,1);  
-H22 = wrcoef2('h',c2,l2,wavelet,2); V22 = wrcoef2('v',c2,l2,wavelet,2);  
+A31 = wrcoef2('a',c1,l1,wavelet,3); 
+A21 = wrcoef2('a',c1,l1,wavelet,2); 
+A11 = wrcoef2('a',c1,l1,wavelet,1);
+H11 = wrcoef2('h',c1,l1,wavelet,1);  
+V11 = wrcoef2('v',c1,l1,wavelet,1); 
+D11 = wrcoef2('d',c1,l1,wavelet,1);  
+H21 = wrcoef2('h',c1,l1,wavelet,2);
+V21 = wrcoef2('v',c1,l1,wavelet,2);  
+D21 = wrcoef2('d',c1,l1,wavelet,3); 
+H31 = wrcoef2('h',c1,l1,wavelet,3); 
+V31 = wrcoef2('v',c1,l1,wavelet,3); 
+D31 = wrcoef2('d',c1,l1,wavelet,3);           
+A32 = wrcoef2('a',c2,l2,wavelet,3); 
+A22 = wrcoef2('a',c2,l2,wavelet,2); 
+A12 = wrcoef2('a',c2,l2,wavelet,1); 
+H12 = wrcoef2('h',c2,l2,wavelet,1);  
+V12 = wrcoef2('v',c2,l2,wavelet,1); 
+D12 = wrcoef2('d',c2,l2,wavelet,1);  
+H22 = wrcoef2('h',c2,l2,wavelet,2); 
+V22 = wrcoef2('v',c2,l2,wavelet,2);  
  
-D22 = wrcoef2('d',c2,l2,wavelet,3); H32 = wrcoef2('h',c2,l2,wavelet,3); 
-V32 = wrcoef2('v',c2,l2,wavelet,3); D32 = wrcoef2('d',c2,l2,wavelet,3);        
-A33 = wrcoef2('a',c3,l3,wavelet,3); A23 = wrcoef2('a',c3,l3,wavelet,2); 
-A13 = wrcoef2('a',c3,l3,wavelet,1); H13 = wrcoef2('h',c3,l3,wavelet,1);  
-V13 = wrcoef2('v',c3,l3,wavelet,1); D13 = wrcoef2('d',c3,l3,wavelet,1);  
-H23 = wrcoef2('h',c3,l3,wavelet,2); V23 = wrcoef2('v',c3,l3,wavelet,2);  
-D23 = wrcoef2('d',c3,l3,wavelet,3); H33 = wrcoef2('h',c3,l3,wavelet,3); 
-V33 = wrcoef2('v',c3,l3,wavelet,3); D33 = wrcoef2('d',c3,l3,wavelet,3); 
+D22 = wrcoef2('d',c2,l2,wavelet,3); 
+H32 = wrcoef2('h',c2,l2,wavelet,3); 
+V32 = wrcoef2('v',c2,l2,wavelet,3); 
+D32 = wrcoef2('d',c2,l2,wavelet,3);        
+A33 = wrcoef2('a',c3,l3,wavelet,3); 
+A23 = wrcoef2('a',c3,l3,wavelet,2); 
+A13 = wrcoef2('a',c3,l3,wavelet,1); 
+H13 = wrcoef2('h',c3,l3,wavelet,1);  
+V13 = wrcoef2('v',c3,l3,wavelet,1);
+D13 = wrcoef2('d',c3,l3,wavelet,1);  
+H23 = wrcoef2('h',c3,l3,wavelet,2); 
+V23 = wrcoef2('v',c3,l3,wavelet,2);  
+D23 = wrcoef2('d',c3,l3,wavelet,3); 
+H33 = wrcoef2('h',c3,l3,wavelet,3); 
+V33 = wrcoef2('v',c3,l3,wavelet,3); 
+D33 = wrcoef2('d',c3,l3,wavelet,3); 
              
-A1(:,:,1) = A11; A1(:,:,2) = A12; A1(:,:,3) = A13;  
-H1(:,:,1) = H11; H1(:,:,2) = H12; H1(:,:,3) = H13; 
-V1(:,:,1) = V11; V1(:,:,2) = V12; V1(:,:,3) = V13; 
-D1(:,:,1) = D11; D1(:,:,2) = D12; D1(:,:,3) = D13; 
-A2(:,:,1) = A21; A2(:,:,2) = A22; A2(:,:,3) = A23; 
-H2(:,:,1) = H21; H2(:,:,2) = H22; H2(:,:,3) = H23; 
-V2(:,:,1) = V21; V2(:,:,2) = V22; V2(:,:,3) = V23; 
-D2(:,:,1) = D21; D2(:,:,2) = D22; D2(:,:,3) = D23; 
-A3(:,:,1) = A31; A3(:,:,2) = A32; A3(:,:,3) = A33; 
-H3(:,:,1) = H31; H3(:,:,2) = H32; H3(:,:,3) = H33; 
-V3(:,:,1) = V31; V3(:,:,2) = V32; V3(:,:,3) = V33; 
-D3(:,:,1) = D31; D3(:,:,2) = D32; D3(:,:,3) = D33;            
+A1(:,:,1) = A11; 
+A1(:,:,2) = A12; 
+A1(:,:,3) = A13;  
+H1(:,:,1) = H11; 
+H1(:,:,2) = H12; 
+H1(:,:,3) = H13; 
+V1(:,:,1) = V11; 
+V1(:,:,2) = V12; 
+V1(:,:,3) = V13; 
+D1(:,:,1) = D11;
+D1(:,:,2) = D12; 
+D1(:,:,3) = D13; 
+A2(:,:,1) = A21; 
+A2(:,:,2) = A22; 
+A2(:,:,3) = A23; 
+H2(:,:,1) = H21; 
+H2(:,:,2) = H22; 
+H2(:,:,3) = H23; 
+V2(:,:,1) = V21; 
+V2(:,:,2) = V22; 
+V2(:,:,3) = V23; 
+D2(:,:,1) = D21; 
+D2(:,:,2) = D22; 
+D2(:,:,3) = D23; 
+A3(:,:,1) = A31; 
+A3(:,:,2) = A32; 
+A3(:,:,3) = A33; 
+H3(:,:,1) = H31; 
+H3(:,:,2) = H32; 
+H3(:,:,3) = H33; 
+V3(:,:,1) = V31; 
+V3(:,:,2) = V32; 
+V3(:,:,3) = V33; 
+D3(:,:,1) = D31; 
+D3(:,:,2) = D32; 
+D3(:,:,3) = D33;            
  
 %1st level coefficient coding 
-a1_cod1 = wcodemat(A11,grayLevels); d1_hcod1 = wcodemat(H11,grayLevels); 
-d1_vcod1 = wcodemat(V11,grayLevels); d1_dcod1 = wcodemat(D11,grayLevels);   
-a1_cod2 = wcodemat(A12,grayLevels); d1_hcod2 = wcodemat(H12,grayLevels); 
-d1_vcod2 = wcodemat(V12,grayLevels); d1_dcod2 = wcodemat(D12,grayLevels);     
-a1_cod3 = wcodemat(A13,grayLevels); d1_hcod3 = wcodemat(H13,grayLevels); 
-d1_vcod3 = wcodemat(V13,grayLevels); d1_dcod3 = wcodemat(D13,grayLevels); 
+a1_cod1 = wcodemat(A11,grayLevels); 
+d1_hcod1 = wcodemat(H11,grayLevels); 
+d1_vcod1 = wcodemat(V11,grayLevels); 
+d1_dcod1 = wcodemat(D11,grayLevels);   
+a1_cod2 = wcodemat(A12,grayLevels);
+d1_hcod2 = wcodemat(H12,grayLevels); 
+d1_vcod2 = wcodemat(V12,grayLevels); 
+d1_dcod2 = wcodemat(D12,grayLevels);     
+a1_cod3 = wcodemat(A13,grayLevels); 
+d1_hcod3 = wcodemat(H13,grayLevels); 
+d1_vcod3 = wcodemat(V13,grayLevels);
+d1_dcod3 = wcodemat(D13,grayLevels); 
                         
 %2nd level coefficient coding 
-a2_cod1 = wcodemat(A21,grayLevels); d2_hcod1 = wcodemat(H21,grayLevels); 
-d2_vcod1 = wcodemat(V21,grayLevels); d2_dcod1 = wcodemat(D21,grayLevels); 
-a2_cod2 = wcodemat(A22,grayLevels); d2_hcod2 = wcodemat(H22,grayLevels); 
-d2_vcod2 = wcodemat(V22,grayLevels); d2_dcod2 = wcodemat(D22,grayLevels); 
-a2_cod3 = wcodemat(A23,grayLevels); d2_hcod3 = wcodemat(H23,grayLevels); 
-d2_vcod3 = wcodemat(V23,grayLevels); d2_dcod3 = wcodemat(D23,grayLevels);    
+a2_cod1 = wcodemat(A21,grayLevels); 
+d2_hcod1 = wcodemat(H21,grayLevels); 
+d2_vcod1 = wcodemat(V21,grayLevels);
+d2_dcod1 = wcodemat(D21,grayLevels); 
+a2_cod2 = wcodemat(A22,grayLevels); 
+d2_hcod2 = wcodemat(H22,grayLevels); 
+d2_vcod2 = wcodemat(V22,grayLevels); 
+d2_dcod2 = wcodemat(D22,grayLevels); 
+a2_cod3 = wcodemat(A23,grayLevels);
+d2_hcod3 = wcodemat(H23,grayLevels); 
+d2_vcod3 = wcodemat(V23,grayLevels); 
+d2_dcod3 = wcodemat(D23,grayLevels);    
  
 % 3rd level coefficients coding 
-a3_cod1 = wcodemat(A31,grayLevels); d3_hcod1 = wcodemat(H31,grayLevels); 
-d3_vcod1 = wcodemat(V31,grayLevels); d3_dcod1 = wcodemat(D31,grayLevels); 
-a3_cod2 = wcodemat(A32,grayLevels); d3_hcod2 = wcodemat(H32,grayLevels); 
-d3_vcod2 = wcodemat(V32,grayLevels); d3_dcod2 = wcodemat(D32,grayLevels); 
-a3_cod3 = wcodemat(A33,grayLevels); d3_hcod3 = wcodemat(H33,grayLevels); 
-d3_vcod3 = wcodemat(V33,grayLevels); d3_dcod3 = wcodemat(D33,grayLevels); 
+a3_cod1 = wcodemat(A31,grayLevels); 
+d3_hcod1 = wcodemat(H31,grayLevels); 
+d3_vcod1 = wcodemat(V31,grayLevels); 
+d3_dcod1 = wcodemat(D31,grayLevels); 
+a3_cod2 = wcodemat(A32,grayLevels); 
+d3_hcod2 = wcodemat(H32,grayLevels); 
+d3_vcod2 = wcodemat(V32,grayLevels); 
+d3_dcod2 = wcodemat(D32,grayLevels); 
+a3_cod3 = wcodemat(A33,grayLevels); 
+d3_hcod3 = wcodemat(H33,grayLevels); 
+d3_vcod3 = wcodemat(V33,grayLevels); 
+d3_dcod3 = wcodemat(D33,grayLevels); 
               
 L31 = imresize([imresize([a3_cod1,d3_hcod1;d3_vcod1,d3_dcod1],size(d2_hcod1),'bilinear'),d2_hcod1;d2_vcod1,d2_dcod1],size(d1_hcod1),'bilinear'),d1_hcod1;d1_vcod1,d1_dcod1]; 
 L32 = [imresize([imresize([a3_cod2,d3_hcod2;d3_vcod2,d3_dcod2],size(d2_hcod2),'bilinear'),d2_hcod2;d2_vcod2,d2_dcod2],size(d1_hcod2),'bilinear'),d1_hcod2;d1_vcod2,d1_dcod2]; 
 L33 = [imresize([imresize([a3_cod3,d3_hcod3;d3_vcod3,d3_dcod3],size(d2_hcod3),'bilinear'),d2_hcod3;d2_vcod3,d2_dcod3],size(d1_hcod3),'bilinear'),d1_hcod3;d1_vcod3,d1_dcod3]; 
              
-L3(:,:,1) = L31;  L3(:,:,2) = L32;  L3(:,:,3) = L33;   
-image(uint8(L3)); axis image; title('Level 3 decomposition'); 
+L3(:,:,1) = L31;  
+L3(:,:,2) = L32;  
+L3(:,:,3) = L33;   
+image(uint8(L3)); 
+axis image; 
+title('Level 3 decomposition'); 
  
 % Calculate the default parameters and perform the actual compression. 
 [thres,sorh,nkeep] = ddencmp('cmp','wv',X1); 
@@ -307,5 +371,5 @@ PSnRq = (0.32*PSNRes) + (0.38*PSNRed) + (0.3*PSNRsd);
 disp('Quality PSNR is'); 
 disp(PSnRq); 
 
-toc;                                                                             %Calculate Run-time 
+toc;                          %Calculate Run-time 
 
