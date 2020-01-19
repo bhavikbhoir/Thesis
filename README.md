@@ -1,4 +1,4 @@
-Abstract
+# Abstract
 
 In today’s digital world, image compression is a crucial aspect of data transmission and 
 storage which has led to an increasing focus on various image compression algorithms. The 
